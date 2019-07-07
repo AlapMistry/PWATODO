@@ -24,7 +24,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/PWATODO/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "theme_color": "#9c24c0",
     "background_color": "#13258d"
