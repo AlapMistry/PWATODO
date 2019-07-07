@@ -5,14 +5,14 @@ var cacheName = "appCache-v1-" + new Date().toLocaleDateString('en-IN', {
     year : 'numeric'
 }).split(' ').join('-');
 var filesCache = [
-    '/PWATODO/',
-    '/PWATODO/index.html',
-    '/PWATODO/manifest.json',
-    '/PWATODO/favicon.ico',
-    '/PWATODO/scripts/app.js',
-    '/PWATODO/styles/inline.css',
-    '/PWATODO/images/icons/icon-tiny.png',
-    '/PWATODO/images/icons/icon-huge.png'
+    './',
+    './index.html',
+    './manifest.json',
+    './favicon.ico',
+    './scripts/app.js',
+    './styles/inline.css',
+    './images/icons/icon-tiny.png',
+    './images/icons/icon-huge.png'
 ];
 
 // Install service worker
