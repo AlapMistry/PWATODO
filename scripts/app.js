@@ -8,7 +8,8 @@ if ('serviceWorker' in navigator) {
 }
 
 // Add to Home Screen
-let deferredPrompt, btnInstall = document.getElementById("btnInstall");
+let deferredPrompt, btnInstall = document.getElementById("btnInstall")
+btnNotification = document.querySelectorAll('#btnNotification');
 
 window.addEventListener('beforeinstallprompt', (e) => {
     console.log("beforeinstallprompt");
@@ -29,3 +30,31 @@ btnInstall.addEventListener("click", function() {
         deferredPrompt = null;
     });
 });
+
+function askForNotification() {
+    Notification.requestPermission(function (result) {
+        console.log('User choice', result);
+        if(result !== 'granted') {
+            console.log('No notification permission granted.');
+        } else {
+            displayConfirmNotification();
+        }
+    });
+}
+
+function displayConfirmNotification() {
+    console.log('Successfully subscribed.');
+    let options = {
+        body: 'Hello Alap\nHi',
+        icon: './images/icons/icon-big.png'
+    };
+    new Notification("Successfully subscribed", options);
+}
+
+if('Notification' in window) {
+    console.log('Notification supported.');
+    for (var i = 0; i < btnNotification.length; i++) {
+        btnNotification[i].style.display = 'inline-block';
+        btnNotification[i].addEventListener('click', askForNotification);
+    }
+}

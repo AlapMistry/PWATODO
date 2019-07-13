@@ -53,3 +53,7 @@ self.addEventListener('fetch', function(e) {
         return response || fetch(e.request);
       }());
 });
+
+self.addEventListener('push', event => {
+    console.log('Service Worker: Push', event);
+});
