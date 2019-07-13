@@ -48,7 +48,12 @@ function displayConfirmNotification() {
         body: 'Hello Alap\nHi',
         icon: './images/icons/icon-big.png'
     };
-    new Notification("Successfully subscribed", options);
+    // For Android Google Chrome
+    navigator.serviceWorker.ready.then(function (registeration) {
+        registeration.showNotification("Successfully subscribed", options);
+    });
+    // For Desktop (Google Chrome, Firefox), Mobile (Firefox)
+    //new Notification("Successfully subscribed", options);
 }
 
 if('Notification' in window) {
