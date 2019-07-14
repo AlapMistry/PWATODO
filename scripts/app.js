@@ -63,3 +63,25 @@ if('Notification' in window) {
         btnNotification[i].addEventListener('click', askForNotification);
     }
 }
+
+// Capture image
+let fileInput = document.getElementById('file-input');
+
+fileInput.addEventListener('change', function (e) {
+    console.log('File Input: ' + e.target.files);
+});
+
+// check for Geolocation support
+if (navigator.geolocation) {
+    console.log('Geolocation is supported!');
+    var startPos;
+    var geoSuccess = function(position) {
+        startPos = position;
+        document.getElementById('currentLat').innerHTML = startPos.coords.latitude;
+        document.getElementById('currentLon').innerHTML = startPos.coords.longitude;
+    };
+    navigator.geolocation.getCurrentPosition(geoSuccess);
+  }
+  else {
+    console.log('Geolocation is not supported for this Browser/OS.');
+  }
