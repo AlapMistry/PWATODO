@@ -46,7 +46,7 @@ function displayConfirmNotification() {
     console.log('Successfully subscribed.');
     let options = {
         body: 'Hello Alap\nHi',
-        icon: './images/icons/icon-big.png'
+        icon: './images/icons/icon-huge.png'
     };
     // For Android Google Chrome
     navigator.serviceWorker.ready.then(function (registeration) {
